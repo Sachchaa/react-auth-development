@@ -5,6 +5,8 @@ import { AuthProvider } from "./contexts/authContext"
 import Signup from "./components/signup"
 import Dashboard from './components/dashboard'
 import Login from './components/login'
+import PrivateRoute from './components/privateRoute'
+import ForgotPassword from './components/forgotPassword'
 
 function App() {
   return (
@@ -13,9 +15,10 @@ function App() {
         <Router>
           <AuthProvider>
             <Switch>
-              <Route exact path='/' component={Dashboard} />
+              <PrivateRoute exact path='/' component={Dashboard} />
               <Route exact path='/signup' component={Signup} />
               <Route exact path='/login' component={Login} />
+              <Route exact path='/forgot-password' component={ForgotPassword} />
             </Switch>
           </AuthProvider>
         </Router>
